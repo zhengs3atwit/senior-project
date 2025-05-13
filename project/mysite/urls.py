@@ -25,6 +25,5 @@ urlpatterns = [
     path('', include('home.urls')),
     path('dashboard/', include('dashboard.urls')),
     path('accounts/', include('accounts.urls')),
-    path('campaigns/' , include('home.urls')),
     # path('webhook/', home.views.postmark_webhook, name='webhook'),
 ]
