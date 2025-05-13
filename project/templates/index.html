@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Home - My Website{% endblock %}
+
+{% block content %}
+<div class="homepage-container" >
+<img src="{% static 'images/counter-email-phishing-attack_banner.png' %}" alt="homepage-image">
+
+{% if not request.user.is_authenticated %}
+<div class="homepagesignupform">
+	<form action="{% url 'register' %}" method="post">
+		{% csrf_token %}
+		{{ the_register_form }}
+		<button class="submitbutton">Submit</button>
+	</form>
+</div>
+</div>
+{% endif %}
+
+
+<p class="homepageparagraph">
+	This project is designed to help organizations send educational emails and measure how users interact with them. By
+	tracking link clicks through emails, it provides insights into which topics users are engaging with the most. The
+	goal is to identify areas where more awareness or education may be needed — all through a simple, data-driven
+	interface.
+
+</p>
+
+{% endblock %}

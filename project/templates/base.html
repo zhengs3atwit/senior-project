@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My Website{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}?v=3">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav id="nav">
+            <ul class="headerbar">
+                <li class="current"><a href=" {% url 'home' %}">Home</a></li>
+
+                <li class="submenu">
+                    <a href="#">Campaigns</a>
+                    <ul>
+                        <li><a href="{%url 'malware'%}">Malware Attachment</a></li>
+                        <li><a href="{%url 'spear'%}">Spear Phishing</a></li>
+                        <li><a href="{%url 'fakelogin'%}">Fake Login Page</a></li>
+                        <li><a href="{%url 'credential'%}">Credential Harvest</a></li>
+                    </ul>
+                </li>
+                {% if request.user.is_authenticated and request.user.is_staff %}
+                <li><a href="/admin">Admin</a></li>
+                {% endif %}
+                <li><a href="{%url 'login'%}" class="loginbutton">Login</a></li>
+
+                <li>
+                    <form action="{% url 'logout' %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit">Logout</button>
+                    </form>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <main>
+        {% block content %} <!-- Child pages will override this -->
+        <p>Default content goes here</p>
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; Senior project 2025</p>
+    </footer>
+</body>
+
+</html>

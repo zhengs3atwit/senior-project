@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Home - My Website{% endblock %}
+
+{% block content %}
+   
+    <form class="loginpageloginform" action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        {{the_login_form}}
+        <button class="submitbutton" >Submit</button>
+    </form>
+{% endblock %}

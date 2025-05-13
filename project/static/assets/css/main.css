@@ -1,0 +1,133 @@
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+	font-family: "Raleway", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 500;
+}
+
+main {
+    flex: 1; 
+}
+
+.homepageparagraph, .campaignparagraphinfos {
+    font-family: 'Arial', sans-serif; 
+    font-size: 18px;
+    line-height: 1.6; 
+    color: #333; 
+    text-align: justify; 
+	background-color: #f8f8f8;
+    padding: 20px;
+    border-left: 5px solid purple; 
+    max-width: 700px;
+    margin: 20px auto; 
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/**
+navbar changes
+**/
+#nav .headerbar {
+display: flex;
+justify-content: space-between;
+gap: 20px;
+}
+
+.homepagecontainer {
+	position: relative;
+	display: inline-block;
+}
+
+.homepagecontainer img {
+	width: 100%;
+}
+.homepagesignupform {
+	position: absolute;
+    top: 20%;
+    left: 15%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: white;
+}
+
+.homepagesignupform, .loginpageloginform {
+	gap: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	align-content: center;
+	font-size: 17px;
+}
+
+/**
+camapign submenv on navbar 
+**/
+.submenu ul {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.submenu:hover > ul {
+    display: block;
+}
+
+/**
+footer
+**/
+footer {
+	text-align: center;
+}
+
+/**
+removes bullets and underline, changes to li and a tags apperance 
+**/
+li {
+	list-style-type: none;
+}
+a {
+	text-decoration: none;
+	color: orangered;
+	font-size: 20px;
+}
+
+nav ul a:hover, #nav ul form button:hover, .submitbutton:hover {
+	text-decoration: underline; 
+	color: green;
+}
+.submitbutton:hover {
+	text-decoration: underline; 
+	color: brown;
+}
+
+
+#nav ul form {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+#nav ul form button {
+    background: none;
+    border: none;
+    color: orangered; 
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.submitbutton {
+    background: none;
+    border: none;
+    color: orangered; 
+    font-size: 25px;
+    cursor: pointer;
+    padding: 10px;
+	font-weight: bold;
+}
